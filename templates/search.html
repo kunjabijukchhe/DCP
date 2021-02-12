@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+{% extends 'base.html' %}
+  {% block body_block %}
+
+    <title>OS</title>
+
+    <h1 style="text-align: center; margin-top: 15px;">Search Country Using I.P Address</h1>
+
+
+    <div class="jumbotron text-center" style="margin-left: 25%; margin-right: 25%; margin-top: 10px;">
+        <table>
+            {% for i,j in c.items%}
+                <tr style="">
+                  <td style="text-align:right; font-family: Arial, Helvetica, sans-serif; color: #009966;"><b>{{i|upper}}: </b></td>
+                  <td style="text-align:left; font-family: Arial, Helvetica, sans-serif; color: #009966;"><b>{{j}}</b></td>
+            </tr>
+            {%endfor%}
+        </table>
+
+      </div>
+  {% endblock %}

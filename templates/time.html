@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+{% extends 'base.html' %}
+  {% block body_block %}
+
+    <title>OS</title>
+
+    <h1 style="text-align: center;">Access Time Used in WedLog</h1>
+  
+    
+    <div class="container text-center" style="width: 50%; height: 15%; margin-left: 25%; background-color:  #eee; ">
+      {%for i in a%}   
+        <h3>{{i}}</h3>
+      {%endfor%}
+    </div>
+
+    <div class="container" style="width: 70%;">
+      <div class="jumbotron" style="background-color: white;">
+      <canvas id="myChart"></canvas>
+      </div>
+    </div>
+      <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+              labels: {{a|safe}},
+              datasets: [{
+                 label: 'No. of Users',
+                  data: {{b|safe}},
+                  backgroundColor: [
+                  '#a4c639',
+                  '#00adef',
+                  '#09802b',
+                  '#fff100',
+                  '#ff8c00',
+                  '#e81123',
+                  '#ec008c',
+                  '#68217a',
+                  '#00188f',
+                  '#00bcf2'
+
+                  ],
+                  borderColor: [
+                      'rgba(164, 198, 57)',
+                      'rgba(0, 173, 239)',
+                      'rgba(9, 128, 43)',
+                      '#fff100',
+                      '#ff8c00',
+                      '#e81123',
+                      '#ec008c',
+                      '#68217a',
+                      '#00188f',
+                      '#00bcf2'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+            responsive:true,
+            
+          }
+    });
+      </script>
+  {% endblock %}

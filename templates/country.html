@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+{% extends 'base.html' %}
+  {% block body_block %}
+
+    <title>OS</title>
+
+    <h1 style="text-align: center;">Country Used in WedLog</h1>
+  
+    
+    <div class="container text-center" style="width: 50%; height: 15%; margin-left: 25%; background-color:  #eee; ">
+      {%for i,j in a.items%}   
+        <h3>{{i}}:{{j}}</h3>
+      {%endfor%}
+    </div>
+
+    <div class="container" style="width: 80%;">
+      <div class="jumbotron" style="background-color: white;">
+      <canvas id="myChart"></canvas>
+    </div>
+      </div>
+      <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'polarArea',
+          data: {
+              labels: {{c|safe}},
+              datasets: [{
+                  label: 'No. of User ',
+                  data: {{d|safe}},
+              backgroundColor: [
+                '#964B00',
+                '#FF9933',
+                '#DC143C',
+                '#ffcc00',
+                '#0050a4',
+                '#f5c15c',
+                '#3c3b6e'
+                
+            ],
+            borderColor: [
+                '#964B00',
+                '#FF9933',
+                '#DC143C',
+                '#ffcc00',
+                '#0050a4',
+                '#f5c15c',
+                '#3c3b6e'
+                
+                ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+            responsive:true,
+            
+          }
+    });
+      </script>
+  {% endblock %}

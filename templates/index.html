@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+    {% block body_block %}
+    <div class="container">
+        <h1 style="margin-top: 20px;">Web Log Access Detail</h1>
+    
+    <div class="jumbotron text-center" style="margin-top: 50px; width: 100%; padding-left: 25%;padding-right: 20%; background-color: aliceblue;">
+       
+        <div class="row">
+            <div class="column">
+              <table>
+                <tr>
+                  <th>Country</th>
+                </tr>
+                {% for i in a%}
+                <tr>
+                  <td>{{i}}</td>
+                </tr>
+                {%endfor%}
+              </table>
+            </div>
+            <div class="column">
+                <table>
+                    <tr>
+                      <th>Operating System</th>
+                    </tr>
+                    {% for i in c%}
+                    <tr>
+                      <td>{{i}}</td>
+                    </tr>
+                    {%endfor%}
+                  </table>
+            </div>
+            <div class="column">
+                <table>
+                    <tr>
+                      <th>Browser</th>
+                    </tr>
+                    {% for i in b%}
+                    <tr>
+                      <td>{{i}}</td>
+                    </tr>
+                    {%endfor%}
+                  </table>
+            </div>
+            <div class="column">
+                <table>
+                    <tr>
+                      <th>Access Time</th>
+                    </tr>
+                    {% for i in d%}
+                    <tr>
+                      <td>{{i}}</td>
+                    </tr>
+                    {%endfor%}
+                  </table>
+            </div>
+          </div>
+     
+      </div>
+    </div>
+    
+    {% endblock %}
+

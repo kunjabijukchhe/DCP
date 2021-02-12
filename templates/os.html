@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+{% extends 'base.html' %}
+  {% block body_block %}
+
+    <title>OS</title>
+
+    <h1 style="text-align: center;">Operating System Used in WedLog</h1>
+  
+    
+    <div class="container text-center" style="width: 50%; height: 15%; margin-left: 25%; background-color:  #eee; ">
+      {%for i,j in a.items%}   
+        <h3>{{i}}:{{j}}</h3>
+      {%endfor%}
+    </div>
+
+    <div class="container" style="width: 50%;">
+      <canvas id="myChart"></canvas>
+      </div>
+      <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+              labels: {{c|safe}},
+              datasets: [{
+                  
+                  data: {{d|safe}},
+                  backgroundColor: [
+                  '#a4c639',
+                  '#00adef',
+                  '#09802b'
+                  ],
+                  borderColor: [
+                      'rgba(164, 198, 57)',
+                      'rgba(0, 173, 239)',
+                      'rgba(9, 128, 43)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+            responsive:true,
+            
+          }
+    });
+      </script>
+  {% endblock %}

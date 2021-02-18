@@ -90,8 +90,9 @@ def getCountry():
     import json
     ips = getIP()
     countries = []
-    # apiKey = '1aa9a28ac607419594bc48b84d9f5d70'
-    apiKey = 'b67567fd8a344bd88f011e4d1b865c5d'
+    # apiKey = 'b67567fd8a344bd88f011e4d1b865c5d'
+    apiKey = '04d1d69a46a846fb97fb92a8d9f0476d'
+
     
     for ip in ips:
         url = 'https://api.ipgeolocation.io/ipgeo?apiKey=' + \
@@ -153,8 +154,9 @@ def UserInput(ip):
     import json
     ips = ip
     countries = []
-    # apiKey = '1aa9a28ac607419594bc48b84d9f5d70'
-    apiKey = 'b67567fd8a344bd88f011e4d1b865c5d'
+    # apiKey = 'b67567fd8a344bd88f011e4d1b865c5d'
+    apiKey = '04d1d69a46a846fb97fb92a8d9f0476d'
+
     # url = 'https://api.ipgeolocation.io/ipgeo?apiKey=' + \
     #         apiKey+'&ip='+ip 
    

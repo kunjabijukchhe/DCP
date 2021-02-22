@@ -91,7 +91,7 @@ def getCountry():
     ips = getIP()
     countries = []
     # apiKey = 'b67567fd8a344bd88f011e4d1b865c5d'
-    apiKey = '04d1d69a46a846fb97fb92a8d9f0476d'
+   
 
     
     for ip in ips:
@@ -155,7 +155,7 @@ def UserInput(ip):
     ips = ip
     countries = []
     # apiKey = 'b67567fd8a344bd88f011e4d1b865c5d'
-    apiKey = '04d1d69a46a846fb97fb92a8d9f0476d'
+
 
     # url = 'https://api.ipgeolocation.io/ipgeo?apiKey=' + \
     #         apiKey+'&ip='+ip 
